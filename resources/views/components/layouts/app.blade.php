@@ -7,13 +7,23 @@
         <title>{{ $title ?? 'Burger Architect' }}</title>
         
         <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600;700&display=swap" rel="stylesheet">
-        <style>body { font-family: 'Fredoka', sans-serif; }</style>
-        
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-      
-    </head>
-    <body>
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ['Fredoka', 'sans-serif'],
+                        }
+                    }
+                }
+            }
+        </script>
+
+        </head>
+    <body class="bg-gray-50 text-gray-900 antialiased">
         {{ $slot }}
     </body>
 </html>
