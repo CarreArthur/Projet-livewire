@@ -1,7 +1,10 @@
 <?php
 
+use App\Livewire\Home;
+use App\Livewire\Builder;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// La page d'accueil devient la "Home"
+Route::get('/', Home::class)->name('home');
+
+
