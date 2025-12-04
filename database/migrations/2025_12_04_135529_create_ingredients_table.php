@@ -19,7 +19,6 @@ return new class extends Migration
                 $table->string('slug')->unique();
                 $table->enum('category', ['bun_top', 'bun_bottom', 'meat', 'cheese', 'veggie', 'sauce']);
                 $table->integer('price'); // Prix en centimes
-                $table->integer('calories')->default(0);
                 $table->string('image_path')->nullable();
                 $table->timestamps();
             });

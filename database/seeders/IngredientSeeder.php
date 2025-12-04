@@ -19,7 +19,6 @@ class IngredientSeeder extends Seeder
                 'slug' => 'bun_bottom_brioche',
                 'category' => 'bun_bottom',
                 'price' => 50, // 0.50€
-                'calories' => 150,
                 'image_path' => 'ingredients/bun-bottom.png',
             ],
             [
@@ -27,7 +26,6 @@ class IngredientSeeder extends Seeder
                 'slug' => 'bun_top_brioche',
                 'category' => 'bun_top',
                 'price' => 50,
-                'calories' => 180,
                 'image_path' => 'ingredients/bun-top.png',
             ],
             
@@ -37,7 +35,6 @@ class IngredientSeeder extends Seeder
                 'slug' => 'beef_patty',
                 'category' => 'meat',
                 'price' => 250, // 2.50€
-                'calories' => 280,
                 'image_path' => 'ingredients/beef.png',
             ],
             [
@@ -45,7 +42,6 @@ class IngredientSeeder extends Seeder
                 'slug' => 'chicken_fried',
                 'category' => 'meat',
                 'price' => 300,
-                'calories' => 320,
                 'image_path' => 'ingredients/chicken.png',
             ],
             [
@@ -53,7 +49,6 @@ class IngredientSeeder extends Seeder
                 'slug' => 'veggie_patty',
                 'category' => 'meat',
                 'price' => 280,
-                'calories' => 180,
                 'image_path' => 'ingredients/veggie.png',
             ],
 
@@ -63,7 +58,6 @@ class IngredientSeeder extends Seeder
                 'slug' => 'cheddar',
                 'category' => 'cheese',
                 'price' => 100,
-                'calories' => 110,
                 'image_path' => 'ingredients/cheddar.png',
             ],
             [
@@ -71,7 +65,6 @@ class IngredientSeeder extends Seeder
                 'slug' => 'raclette',
                 'category' => 'cheese',
                 'price' => 150,
-                'calories' => 140,
                 'image_path' => 'ingredients/raclette.png',
             ],
 
@@ -81,32 +74,28 @@ class IngredientSeeder extends Seeder
                 'slug' => 'lettuce',
                 'category' => 'veggie',
                 'price' => 20, // 0.20€
-                'calories' => 5,
-                'image_path' => 'ingredients/lettuce.png',
+              'image_path' => 'ingredients/lettuce.png',
             ],
             [
                 'name' => 'Rondelles de Tomate',
                 'slug' => 'tomato',
                 'category' => 'veggie',
                 'price' => 30,
-                'calories' => 10,
-                'image_path' => 'ingredients/tomato.png',
+               'image_path' => 'ingredients/tomato.png',
             ],
             [
                 'name' => 'Oignons Rouges',
                 'slug' => 'red_onion',
                 'category' => 'veggie',
                 'price' => 20,
-                'calories' => 12,
-                'image_path' => 'ingredients/onion.png',
+               'image_path' => 'ingredients/onion.png',
             ],
             [
                 'name' => 'Cornichons (Pickles)',
                 'slug' => 'pickles',
                 'category' => 'veggie',
                 'price' => 20,
-                'calories' => 8,
-                'image_path' => 'ingredients/pickles.png',
+              'image_path' => 'ingredients/pickles.png',
             ],
 
             // --- SAUCES ---
@@ -115,23 +104,20 @@ class IngredientSeeder extends Seeder
                 'slug' => 'ketchup',
                 'category' => 'sauce',
                 'price' => 50,
-                'calories' => 40,
-                'image_path' => 'ingredients/sauce-ketchup.png',
+               'image_path' => 'ingredients/sauce-ketchup.png',
             ],
             [
                 'name' => 'Mayonnaise',
                 'slug' => 'mayo',
                 'category' => 'sauce',
                 'price' => 50,
-                'calories' => 90,
-                'image_path' => 'ingredients/sauce-mayo.png',
+               'image_path' => 'ingredients/sauce-mayo.png',
             ],
              [
                 'name' => 'Sauce Burger Secret',
                 'slug' => 'sauce_secret',
                 'category' => 'sauce',
                 'price' => 80,
-                'calories' => 120,
                 'image_path' => 'ingredients/sauce-secret.png',
             ],
         ];
