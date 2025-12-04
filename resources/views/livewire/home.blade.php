@@ -16,13 +16,11 @@
             <div class="absolute top-10 w-64 h-64 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
             
             <img 
-                src="https://parspng.com/wp-content/uploads/2022/07/Thaiburgerpng.parspng.com-3.png" 
+                src="../../ingredients/burger.png"
                 class="w-72 h-auto object-contain drop-shadow-2xl animate-float hover:scale-105 transition duration-500 ease-in-out cursor-pointer"
                 alt="Giant Burger"
             >
         </div>
-
-        <div class="absolute -bottom-10 right-10 w-20 h-20 bg-yellow-400 rounded-full hidden sm:block"></div>
     </div>
 
     <div class="flex-1 flex flex-col items-center justify-center p-8 space-y-6 bg-white relative">
