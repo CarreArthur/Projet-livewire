@@ -21,8 +21,6 @@
                 alt="Giant Burger"
             >
         </div>
-
-        <div class="absolute -bottom-10 right-10 w-20 h-20 bg-yellow-400 rounded-full hidden sm:block"></div>
     </div>
 
     <div class="flex-1 flex flex-col items-center justify-center p-8 space-y-6 bg-white relative">
