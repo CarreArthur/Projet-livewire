@@ -8,5 +8,6 @@
     </head>
     <body>
         {{ $slot }}
+        <livewire:ingredient :lien="table"/>
     </body>
 </html>
