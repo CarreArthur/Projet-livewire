@@ -1,6 +1,5 @@
 <div class="min-h-screen bg-white flex flex-col relative overflow-hidden font-sans">
     
-    <!-- Affichage du Message de Succès (après connexion/inscription) -->
     @if (session()->has('success'))
     <div 
         x-data="{ show: true }" 
@@ -116,7 +115,6 @@
         }
     </style>
     
-    <!-- 🛑 INCLUSION CRITIQUE AVEC wire:key pour l'hydratation -->
     <livewire:auth-modal wire:key="auth-modal-main" />
     
 </div>
