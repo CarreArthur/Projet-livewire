@@ -15,13 +15,6 @@ class IngredientSeeder extends Seeder
         $ingredients = [
             // --- BUNS (Pains) ---
             [
-                'name' => 'Bun Brioché (Bas)',
-                'slug' => 'bun_bottom_brioche',
-                'category' => 'bun_bottom',
-                'price' => 50, // 0.50€
-                'image_path' => 'ingredients/bun-bottom.png',
-            ],
-            [
                 'name' => 'Bun Brioché (Haut)',
                 'slug' => 'bun_top_brioche',
                 'category' => 'bun_top',
@@ -43,13 +36,6 @@ class IngredientSeeder extends Seeder
                 'category' => 'meat',
                 'price' => 300,
                 'image_path' => 'ingredients/chicken.png',
-            ],
-            [
-                'name' => 'Galette Veggie',
-                'slug' => 'veggie_patty',
-                'category' => 'meat',
-                'price' => 280,
-                'image_path' => 'ingredients/veggie.png',
             ],
 
             // --- CHEESE (Fromages) ---
@@ -113,13 +99,13 @@ class IngredientSeeder extends Seeder
                 'price' => 50,
                'image_path' => 'ingredients/sauce-mayo.png',
             ],
-             [
-                'name' => 'Sauce Burger Secret',
-                'slug' => 'sauce_secret',
-                'category' => 'sauce',
-                'price' => 80,
-                'image_path' => 'ingredients/sauce-secret.png',
-            ],
+            [
+                'name' => 'Bun Brioché (Bas)',
+                'slug' => 'bun_bottom_brioche',
+                'category' => 'bun_bottom',
+                'price' => 50, // 0.50€
+                'image_path' => 'ingredients/bun-bottom.png',
+            ]
         ];
 
         // Insertion
