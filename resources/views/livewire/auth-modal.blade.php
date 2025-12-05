@@ -1,5 +1,5 @@
 <div 
-    id="auth-modal-wrapper" {{-- 💡 Ajout de l'ID pour la méthode closeModal dans le PHP --}}
+    id="auth-modal-wrapper" 
     x-data="{ 
         show: @entangle('isOpen'),
         showLoginPassword: false, 
