@@ -5,7 +5,7 @@
         <div class="text-center z-20">
             <h1 class="text-4xl font-black text-gray-900 tracking-tight leading-none uppercase drop-shadow-sm">
                 Burger<br>
-                <span class="text-white text-5xl drop-shadow-md">Architect</span>
+                <span class="text-white text-5xl drop-shadow-md">Builder</span>
             </h1>
             <p class="text-yellow-900 font-bold mt-2 opacity-80 text-sm uppercase tracking-widest">
                 Stack it. Eat it.
