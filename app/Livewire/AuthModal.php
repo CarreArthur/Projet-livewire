@@ -15,10 +15,13 @@ class AuthModal extends Component
     
     #[Rule('required|email')]
     public string $email = '';
+
     #[Rule('required|min:6')]
     public string $password = '';
+    
     #[Rule('required|min:3')]
     public string $name = '';
+
     #[Rule('required|same:password')]
     public string $password_confirmation = '';
 
@@ -35,7 +38,7 @@ class AuthModal extends Component
     public function closeModal(): void
     {
         $this->js('
-            const modalElement = document.getElementById("auth-modal-wrapper"); 
+            const modalElement = document.getElementById("auth-modal-wrapper");
             if (modalElement) {
                 setTimeout(() => { $wire.isOpen = false; }, 300);
             } else {
@@ -50,9 +53,14 @@ class AuthModal extends Component
         $this->resetValidation(); 
     }
 
+    // --- Méthode de Connexion ---
     public function login(): void
     {
-        $this->validate(['email' => 'required|email','password' => 'required',]);
+        $this->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
         if (Auth::attempt(['email' => $this->email, 'password' => $this->password])) {
             session()->flash('success', 'Connexion réussie ! Bienvenue.');
             $this->closeModal();
@@ -62,6 +70,7 @@ class AuthModal extends Component
         }
     }
 
+    // --- Méthode d'Inscription ---
     public function register(): void
     {
         $this->validate([
@@ -84,8 +93,7 @@ class AuthModal extends Component
         $this->redirect(route('home'), navigate: true); 
     }
     
-
-    #[On('logout')]
+    #[On('logout')] 
     public function logout(): void
     {
         Auth::logout();

@@ -1,5 +1,19 @@
 <div class="min-h-screen bg-white flex flex-col relative overflow-hidden font-sans">
     
+    @if (session()->has('success'))
+    <div 
+        x-data="{ show: true }" 
+        x-init="setTimeout(() => { show = false; }, 3000)" 
+        x-show="show"
+        x-transition:leave="transition ease-in duration-500"
+        x-transition:leave-start="opacity-100 transform translate-y-0"
+        x-transition:leave-end="opacity-0 transform -translate-y-full"
+        class="fixed top-0 left-0 right-0 z-[10000] bg-green-500 text-white p-4 text-center font-bold shadow-lg"
+    >
+        {{ session('success') }}
+    </div>
+@endif
+    
     <div class="bg-yellow-400 h-[65vh] w-full rounded-b-[4rem] flex flex-col items-center pt-12 relative shadow-xl z-10">
         
         <div class="text-center z-20">
@@ -46,15 +60,13 @@
 
         <div class="w-full max-w-sm grid grid-cols-2 gap-4">
             
-            <!-- Bouton Historique (toujours visible) -->
             <button class="flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold py-3 px-4 rounded-2xl transition">
                 <span>Historique</span>
             </button>
             
             
             @auth
-                <!-- Si l'utilisateur est connecté : affiche le nom de l'utilisateur et un lien vers le profil -->
-                <a href="{{ url('/dashboard') }}" class="flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-2xl transition shadow-md">
+                <a href="{{ url('/home') }}" class="flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-2xl transition shadow-md">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.98 5.98 0 0010 16a5.978 5.978 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd" />
                     </svg>
@@ -63,7 +75,6 @@
                     </span>
                 </a>
             @else
-                <!-- Si l'utilisateur n'est PAS connecté : affiche le bouton pour ouvrir la modale -->
                 <button 
                     x-data="{}"
                     x-on:click="$dispatch('open-auth-modal', { initialMode: 'login' })" 
@@ -100,6 +111,6 @@
         }
     </style>
     
-    <livewire:auth-modal />
+    <livewire:auth-modal wire:key="auth-modal-main" />
     
 </div>
