@@ -34,7 +34,7 @@
 
         <a href="{{ url('/builder') }}" wire:navigate class="w-full max-w-sm group">
             <div class="relative">
-                <div class="absolute -inset-1 bg-gradient-to-r from-green-600 to-green-400 rounded-full blur opacity-40 group-hover:opacity-100 transition duration-200"></div>
+                <div class="absolute -inset-1 bg-linear-to-r from-green-600 to-green-400 rounded-full blur opacity-40 group-hover:opacity-100 transition duration-200"></div>
                 <button class="relative w-full bg-green-600 hover:bg-green-500 text-white font-bold py-4 px-8 rounded-full shadow-lg transform transition hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-3 text-lg">
                     <span>Créer mon Burger</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
