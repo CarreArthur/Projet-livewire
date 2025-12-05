@@ -17,9 +17,9 @@ class Ingredient extends Component
         return view('livewire.ingredient', );
     }
 
-    public function addBurger()
-    {
-        $this->dispatch('ingredientAdd', ingredient:$this->ingredient);
-    }
+    //public function addBurger()
+    //{
+    //    $this->dispatch('ingredientAdd', ingredient:$this->ingredient);
+    //}
 
 }
