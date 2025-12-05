@@ -6,14 +6,20 @@ use Livewire\Component;
 
 class Ingredient extends Component
 {
-    public $lien = "";
-    public $price = 0;
+   
+    public $ingredient;
+    public function mount($ingredient) {
+        $this->ingredient = $ingredient;
+    }
 
     public function render()
     {
-        return view('livewire.ingredient', [
-            'lien' => $this->lien,
-        ]);
+        return view('livewire.ingredient', );
+    }
+
+    public function addBurger()
+    {
+        $this->dispatch('ingredientAdd', ingredient:$this->ingredient);
     }
 
 }
