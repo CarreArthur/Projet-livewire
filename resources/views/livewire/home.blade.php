@@ -5,7 +5,7 @@
         <div class="text-center z-20">
             <h1 class="text-4xl font-black text-gray-900 tracking-tight leading-none uppercase drop-shadow-sm">
                 Burger<br>
-                <span class="text-white text-5xl drop-shadow-md">Builder</span>
+                <span class="text-white text-5xl drop-shadow-md">Architect</span>
             </h1>
             <p class="text-yellow-900 font-bold mt-2 opacity-80 text-sm uppercase tracking-widest">
                 Stack it. Eat it.
@@ -34,7 +34,7 @@
 
         <a href="{{ url('/builder') }}" wire:navigate class="w-full max-w-sm group">
             <div class="relative">
-                <div class="absolute -inset-1 bg-linear-to-r from-green-600 to-green-400 rounded-full blur opacity-40 group-hover:opacity-100 transition duration-200"></div>
+                <div class="absolute -inset-1 bg-gradient-to-r from-green-600 to-green-400 rounded-full blur opacity-40 group-hover:opacity-100 transition duration-200"></div>
                 <button class="relative w-full bg-green-600 hover:bg-green-500 text-white font-bold py-4 px-8 rounded-full shadow-lg transform transition hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-3 text-lg">
                     <span>Créer mon Burger</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -45,13 +45,47 @@
         </a>
 
         <div class="w-full max-w-sm grid grid-cols-2 gap-4">
+            
+            <!-- Bouton Historique (toujours visible) -->
             <button class="flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold py-3 px-4 rounded-2xl transition">
                 <span>Historique</span>
             </button>
-            <button class="flex items-center justify-center gap-2 bg-orange-100 hover:bg-orange-200 text-orange-700 font-bold py-3 px-4 rounded-2xl transition">
-                <span>Compte</span>
-            </button>
+            
+            
+            @auth
+                <!-- Si l'utilisateur est connecté : affiche le nom de l'utilisateur et un lien vers le profil -->
+                <a href="{{ url('/dashboard') }}" class="flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-2xl transition shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.98 5.98 0 0010 16a5.978 5.978 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="truncate" title="{{ Auth::user()->name }}">
+                        Salut, {{ Auth::user()->name }}
+                    </span>
+                </a>
+            @else
+                <!-- Si l'utilisateur n'est PAS connecté : affiche le bouton pour ouvrir la modale -->
+                <button 
+                    x-data="{}"
+                    x-on:click="$dispatch('open-auth-modal', { initialMode: 'login' })" 
+                    class="flex items-center justify-center gap-2 bg-orange-100 hover:bg-orange-200 text-orange-700 font-bold py-3 px-4 rounded-2xl transition"
+                >
+                    <span>Compte</span>
+                </button>
+            @endauth
+            
         </div>
+        
+        @auth
+            <div class="text-sm text-gray-500 mt-2">
+                <button 
+                    wire:click="$dispatch('logout')" 
+                    class="text-red-500 hover:text-red-700 font-semibold underline"
+                >
+                    (Se déconnecter)
+                </button>
+            </div>
+        @endauth
+        
 
     </div>
 
@@ -65,4 +99,7 @@
             animation: float 4s ease-in-out infinite;
         }
     </style>
+    
+    <livewire:auth-modal />
+    
 </div>
