@@ -69,6 +69,8 @@ class BurgerBuilder extends Component
 
         if ($ingredient) {
             $this->total -= $ingredient->price;
+
+            $this->dispatch('ingredientRemove', ingredient: $ingredient->toArray());
         }
     }
 
