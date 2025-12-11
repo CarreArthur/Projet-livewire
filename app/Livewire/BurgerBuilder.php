@@ -9,7 +9,7 @@ class BurgerBuilder extends Component
 {
     public $ingredients;
     public $quantities = [];
-    public $total = 0;
+    public $total = 100; // Prix de base pour les pains
     public $name = '';
 
     protected $listeners = [
@@ -106,7 +106,7 @@ class BurgerBuilder extends Component
             }
         }
 
-        $this->total = 0;
+        $this->total = 100; // Réinitialise le prix de base pour les pains
     }
 
     public function render()
