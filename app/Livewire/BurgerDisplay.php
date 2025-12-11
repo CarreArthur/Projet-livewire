@@ -11,7 +11,10 @@ class BurgerDisplay extends Component
     public $burger = ['bun_top_brioche', 'bun_bottom_brioche'];
     public $currentBurger = [];
 
-    protected $listeners = ['ingredientAdd'=>'addToBurger'];
+    protected $listeners = [
+        'ingredientAdd' => 'addToBurger',
+        'resetBurger'   => 'resetBurger',
+    ];
 
     public function addToBurger($ingredient){
         $this->currentBurger = [];
@@ -23,8 +26,20 @@ class BurgerDisplay extends Component
         //dd($this->currentBurger);
     }
 
+    public function resetBurger()
+    {
+        $this->burger = ['bun_top_brioche', 'bun_bottom_brioche'];
+        $this->currentBurger = [];
+
+        foreach ($this->burger as $b) {
+            $this->currentBurger[] = Ingredient::get()->where('slug', '=', $b)->first();
+        }
+    }
+
     public function render()
     {
-        return view('livewire.burger-display', $this->currentBurger);
+        return view('livewire.burger-display', [
+            'currentBurger' => $this->currentBurger,
+        ]);
     }
 }
