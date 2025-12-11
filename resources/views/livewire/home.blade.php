@@ -64,10 +64,6 @@
 
         <div class="w-full max-w-sm grid grid-cols-2 gap-4">
             
-            <button class="flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold py-3 px-4 rounded-2xl transition">
-                <span>Historique</span>
-            </button>
-            
             <a href="{{ url('/panier') }}" class="flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-4 rounded-2xl transition shadow-md">
                 <span>Panier</span>
                 <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-white text-gray-900 text-xs font-bold">
