@@ -2,6 +2,6 @@
     <livewire:burger-builder/>
 
     @foreach($currentBurger as $burger)
-        <p>{{$burger->slug}}</p>
+        <img src="{{$burger->image_path}}" alt="{{$burger->name}}">
     @endforeach
 </div>
