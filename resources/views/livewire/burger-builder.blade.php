@@ -1,12 +1,21 @@
 <div class="max-w-md mx-auto bg-gray-50 rounded-3xl shadow-xl overflow-hidden">
     <div class="bg-yellow-400 px-6 py-4 flex items-center justify-between">
-        <button
-            wire:click="resetBuilder"
-            class="flex items-center gap-2 bg-white/80 hover:bg-white text-gray-900 font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200"
-        >
-            <span class="inline-flex h-5 w-5 items-center justify-center rounded-full border border-gray-400 text-xs font-bold">⟳</span>
-            <span>Refresh</span>
-        </button>
+        <div class="flex items-center gap-2">
+            <a
+                href="{{ url('/') }}"
+                class="inline-flex items-center justify-center bg-white/80 hover:bg-white text-gray-900 font-semibold px-3 py-2 rounded-full shadow-sm transition-colors duration-200"
+            >
+                <span class="text-lg">←</span>
+            </a>
+
+            <button
+                wire:click="resetBuilder"
+                class="flex items-center gap-2 bg-white/80 hover:bg-white text-gray-900 font-semibold px-4 py-2 rounded-full shadow-sm transition-colors duration-200"
+            >
+                <span class="inline-flex h-5 w-5 items-center justify-center rounded-full border border-gray-400 text-xs font-bold">⟳</span>
+                <span>Refresh</span>
+            </button>
+        </div>
 
         <div class="text-right">
             <p class="text-sm text-gray-800 font-medium">Your total</p>
