@@ -10,6 +10,7 @@ class BurgerBuilder extends Component
     public $ingredients;
     public $quantities = [];
     public $total = 0;
+    public $name = '';
 
     protected $listeners = [
         'resetBurger' => 'handleResetBurger',
@@ -28,6 +29,15 @@ class BurgerBuilder extends Component
                 $this->quantities[$ingredient->id] = 0;
             }
         }
+
+        // Initialise le nom du burger vide
+        $this->dispatch('burgerNameUpdated', name: $this->name);
+    }
+
+    public function updatedName()
+    {
+        // Synchronise le nom du burger avec le composant d'affichage
+        $this->dispatch('burgerNameUpdated', name: $this->name);
     }
 
     public function getFormattedTotalProperty()

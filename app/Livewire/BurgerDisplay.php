@@ -11,17 +11,24 @@ class BurgerDisplay extends Component
     public $burger = ['bun_top_brioche', 'bun_bottom_brioche'];
     public $currentBurger = [];
     public $cartCount = 0;
+    public $burgerName = '';
 
     protected $listeners = [
         'ingredientAdd' => 'addToBurger',
         'ingredientRemove' => 'removeFromBurger',
         'resetBurger'   => 'resetBurger',
+        'burgerNameUpdated' => 'updateBurgerName',
     ];
 
     public function mount()
     {
         $this->hydrateCurrentBurger();
         $this->syncCartCount();
+    }
+
+    public function updateBurgerName($name)
+    {
+        $this->burgerName = $name ?? '';
     }
 
     public function addToBurger($ingredient){
@@ -82,6 +89,7 @@ class BurgerDisplay extends Component
         $cart = session()->get('cart', []);
 
         $cart[] = [
+            'name' => $this->burgerName ?: 'Burger personnalisé',
             'items' => $items,
             'total_price' => $totalPrice,
             'created_at' => now()->toDateTimeString(),

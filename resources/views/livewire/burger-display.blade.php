@@ -26,6 +26,12 @@
                     </div>
                 @endif
 
+                <div class="w-full mb-3 text-center">
+                    <p class="text-sm font-semibold text-gray-700">
+                        {{ $burgerName !== '' ? $burgerName : 'Burger sans nom' }}
+                    </p>
+                </div>
+
                 <div class="relative w-full flex flex-col items-center" style="min-height: 320px;">
                     @foreach($currentBurger as $burger)
                         <img

@@ -28,7 +28,9 @@
                 @foreach($items as $index => $cartItem)
                     <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 bg-gray-50 border border-gray-200 rounded-2xl p-4">
                         <div class="flex-1 space-y-2">
-                            <p class="font-semibold text-gray-800">Burger #{{ $index + 1 }}</p>
+                            <p class="font-semibold text-gray-800">
+                                {{ $cartItem['name'] ?? ('Burger #' . ($index + 1)) }}
+                            </p>
                             <div class="flex flex-wrap gap-2">
                                 @foreach($cartItem['items'] as $ingredient)
                                     <span class="inline-flex items-center gap-2 bg-white border border-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700">
