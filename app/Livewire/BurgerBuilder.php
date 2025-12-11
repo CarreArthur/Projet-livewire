@@ -11,6 +11,10 @@ class BurgerBuilder extends Component
     public $quantities = [];
     public $total = 0;
 
+    protected $listeners = [
+        'resetBurger' => 'handleResetBurger',
+    ];
+
     public function mount()
     {
         // On inclut tous les ingrédients dans la liste, mais le pain du haut
@@ -76,6 +80,12 @@ class BurgerBuilder extends Component
 
     public function resetBuilder()
     {
+        $this->handleResetBurger();
+        $this->dispatch('resetBurger');
+    }
+
+    public function handleResetBurger()
+    {
         foreach ($this->quantities as $id => $quantity) {
             $ingredient = $this->ingredients->firstWhere('id', $id);
 
@@ -87,8 +97,6 @@ class BurgerBuilder extends Component
         }
 
         $this->total = 0;
-
-        $this->dispatch('resetBurger');
     }
 
     public function render()

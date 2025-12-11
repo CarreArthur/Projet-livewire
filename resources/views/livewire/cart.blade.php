@@ -68,7 +68,7 @@
                     wire:click="checkout"
                     class="w-full md:w-auto bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold px-6 py-3 rounded-full shadow-md transition"
                 >
-                    Acheter mon burger
+                    {{ count($items) > 1 ? 'Acheter mes burger' : 'Acheter mon burger' }}
                 </button>
             </div>
         @endif

@@ -92,6 +92,10 @@ class BurgerDisplay extends Component
         $this->syncCartCount();
 
         session()->flash('success', 'Burger ajouté au panier !');
+
+        // Réinitialise le burger pour en créer un nouveau
+        $this->resetBurger();
+        $this->dispatch('resetBurger');
     }
 
     public function resetBurger()
