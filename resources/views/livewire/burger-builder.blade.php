@@ -36,9 +36,7 @@
 
                 <div class="flex-1">
                     <p class="font-semibold text-gray-800 leading-tight">{{ $ingredient->name }}</p>
-                    @unless(in_array($ingredient->slug, ['bun_top_brioche', 'bun_bottom_brioche']))
-                        <p class="text-sm text-green-600 font-medium">+ {{ $ingredient->price / 100 }}€</p>
-                    @endunless
+                    <p class="text-sm text-green-600 font-medium">+ {{ $ingredient->price / 100 }}€</p>
                 </div>
 
                 <div class="flex items-center gap-2">
