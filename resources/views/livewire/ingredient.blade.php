@@ -1,10 +1,10 @@
 <div class="bg-white rounded-3xl shadow-lg p-4 flex flex-col items-center justify-between gap-4 transition transform hover:-translate-y-1 hover:shadow-xl h-full mt-4">
     
-    <div class="h-32 w-full flex items-center justify-center  rounded-2xl p-2">
+    <div class="h-24 w-24 mx-auto flex items-center justify-center rounded-2xl p-2">
         <img 
             src="{{$ingredient->image_path}}" 
             alt="{{$ingredient->name}}" 
-            class="max-h-full object-contain drop-shadow-md"
+            class="w-20 h-20 object-contain drop-shadow-md"
         >
     </div>
 

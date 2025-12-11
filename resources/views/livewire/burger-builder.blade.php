@@ -21,7 +21,7 @@
                     <img
                         src="{{ $ingredient->image_path }}"
                         alt="{{ $ingredient->name }}"
-                        class="max-h-14 object-contain drop-shadow-md"
+                        class="w-14 h-14 object-contain drop-shadow-md"
                     >
                 </div>
 
