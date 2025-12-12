@@ -33,11 +33,33 @@
                 </div>
 
                 <div class="relative w-full flex flex-col items-center" style="min-height: 320px;">
-                    @foreach($currentBurger as $burger)
+                    @foreach($currentBurger as $index => $burger)
+                        @php
+                            $isBun = in_array($burger->category, ['bun_top', 'bun_bottom']);
+                            $widthClass = $isBun ? 'w-48' : 'w-36';
+                            
+                            // Ajouter un espace après le bun du haut et avant le bun du bas
+                            $marginClass = '';
+                            if ($index > 0) {
+                                $prevBurger = $currentBurger[$index - 1];
+                                $prevIsBun = in_array($prevBurger->category, ['bun_top', 'bun_bottom']);
+                                
+                                if ($prevIsBun && !$isBun) {
+                                    // Espace après le bun du haut
+                                    $marginClass = 'mt-2';
+                                } elseif (!$prevIsBun && $isBun) {
+                                    // Espace avant le bun du bas
+                                    $marginClass = 'mt-2';
+                                } else {
+                                    // Espacement normal entre les ingrédients
+                                    $marginClass = '-mt-6';
+                                }
+                            }
+                        @endphp
                         <img
                             src="{{ $burger->image_path }}"
                             alt="{{ $burger->name }}"
-                            class="w-40 object-contain -mt-6 first:mt-0 drop-shadow-md"
+                            class="{{ $widthClass }} h-auto object-contain {{ $marginClass }} drop-shadow-md"
                         >
                     @endforeach
                 </div>
