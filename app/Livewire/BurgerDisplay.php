@@ -55,7 +55,6 @@ class BurgerDisplay extends Component
 
     public function addCurrentBurgerToCart()
     {
-        // Reconstruit le burger courant avec les données en base
         $this->hydrateCurrentBurger();
 
         if (empty($this->currentBurger)) {
@@ -101,7 +100,6 @@ class BurgerDisplay extends Component
 
         session()->flash('success', 'Burger ajouté au panier !');
 
-        // Réinitialise le burger pour en créer un nouveau
         $this->resetBurger();
         $this->dispatch('resetBurger');
     }

@@ -9,7 +9,7 @@ class BurgerBuilder extends Component
 {
     public $ingredients;
     public $quantities = [];
-    public $total = 100; // Prix de base pour les pains
+    public $total = 100; 
     public $name = '';
 
     protected $listeners = [
@@ -18,8 +18,6 @@ class BurgerBuilder extends Component
 
     public function mount()
     {
-        // On inclut tous les ingrédients dans la liste, mais le pain du haut
-        // et le pain du bas sont affichés comme déjà inclus et non modifiables.
         $this->ingredients = Ingredient::all();
 
         foreach ($this->ingredients as $ingredient) {
@@ -30,13 +28,11 @@ class BurgerBuilder extends Component
             }
         }
 
-        // Initialise le nom du burger vide
         $this->dispatch('burgerNameUpdated', name: $this->name);
     }
 
     public function updatedName()
     {
-        // Synchronise le nom du burger avec le composant d'affichage
         $this->dispatch('burgerNameUpdated', name: $this->name);
     }
 
@@ -53,7 +49,6 @@ class BurgerBuilder extends Component
 
         $ingredient = $this->ingredients->firstWhere('id', $ingredientId);
 
-        // On ne permet pas de modifier la quantité des pains (déjà inclus).
         if ($ingredient && in_array($ingredient->slug, ['bun_top_brioche', 'bun_bottom_brioche'])) {
             return;
         }
@@ -74,7 +69,6 @@ class BurgerBuilder extends Component
         }
         $ingredient = $this->ingredients->firstWhere('id', $ingredientId);
 
-        // On ne permet pas de modifier la quantité des pains (déjà inclus).
         if ($ingredient && in_array($ingredient->slug, ['bun_top_brioche', 'bun_bottom_brioche'])) {
             return;
         }
@@ -106,7 +100,7 @@ class BurgerBuilder extends Component
             }
         }
 
-        $this->total = 100; // Réinitialise le prix de base pour les pains
+        $this->total = 100; 
     }
 
     public function render()

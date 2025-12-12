@@ -83,6 +83,13 @@ class IngredientSeeder extends Seeder
                 'price' => 20,
               'image_path' => 'ingredients/pickles.png',
             ],
+            [
+                'name' => 'Jalapeno',
+                'slug' => 'jalapeno',
+                'category' => 'veggie',
+                'price' => 50,
+               'image_path' => 'ingredients/jalapeno.png',
+            ],
 
             // --- SAUCES ---
             [
