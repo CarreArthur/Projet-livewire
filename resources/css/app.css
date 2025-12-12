@@ -9,3 +9,28 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+/* Scrollbar personnalisée pour la liste d'ingrédients */
+.ingredients-scroll::-webkit-scrollbar {
+    width: 8px;
+}
+
+.ingredients-scroll::-webkit-scrollbar-track {
+    background: #f3f4f6;
+    border-radius: 10px;
+}
+
+.ingredients-scroll::-webkit-scrollbar-thumb {
+    background: #facc15;
+    border-radius: 10px;
+}
+
+.ingredients-scroll::-webkit-scrollbar-thumb:hover {
+    background: #eab308;
+}
+
+/* Support Firefox */
+.ingredients-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: #facc15 #f3f4f6;
+}

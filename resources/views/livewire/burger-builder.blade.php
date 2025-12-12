@@ -23,7 +23,7 @@
         </div>
     </div>
 
-    <div class="px-4 py-4 space-y-3">
+    <div class="px-4 py-4">
         <div class="mb-3">
             <label class="block text-sm font-semibold text-gray-700 mb-1">
                 Nom de ton burger
@@ -35,7 +35,8 @@
                 placeholder="Ex: Le Super Burger"
             >
         </div>
-        @foreach($ingredients as $ingredient)
+        <div class="ingredients-scroll space-y-3 max-h-[450px] overflow-y-auto pr-1">
+            @foreach($ingredients as $ingredient)
             <div class="flex items-center gap-3 bg-white rounded-2xl shadow-sm px-3 py-2">
                 <div class="w-16 h-16 flex items-center justify-center">
                     <img
@@ -79,6 +80,7 @@
                     @endif
                 </div>
             </div>
-        @endforeach
+            @endforeach
+        </div>
     </div>
 </div>
